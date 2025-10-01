@@ -1,4 +1,4 @@
 [autorun]
 label=Driver USB
 action=Установить драйверы
-open=Menu.bat
+open=menu.bat
