@@ -21,6 +21,9 @@ $banner = @"
                \  |  /<`  (    )  `>
                 \ | /   `^-*==*-^`
                  \|/
+                 
+                    blednyikaklanaya make this
+                    
 "@
 Write-Host $banner -ForegroundColor Cyan
 
