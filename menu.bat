@@ -6,20 +6,20 @@ color 0D
 :menu
 cls
 echo ============================================
-echo         🔧 Меню установки и прошивки
+echo         Installation and firmware menu
 echo ============================================
 echo.
-echo   1. Установить драйверы
+echo   1. Install drivers
 echo      (RunDriversInstall.bat) 
-echo      и затем открыть скрипт прошивки
+echo      and then open the firmware script
 echo.
-echo   2. Сразу прошить устройство
+echo   2. Firmware the device immediately
 echo.
-echo   0. Выход
+echo   0. Exit
 echo ============================================
 echo.
 
-set /p choice="Введите номер: "
+set /p choice="Enter the number: "
 
 if "%choice%"=="1" goto drivers
 if "%choice%"=="2" goto flash
@@ -28,10 +28,10 @@ goto menu
 
 :drivers
 cls
-echo 🔄 Запуск PowerShell для установки драйверов...
+echo Launching PowerShell to install drivers...
 call "%~dp0RunDriversInstall.bat"
 echo.
-echo ✅ Драйверы установлены.
+echo The drivers are installed.
 echo.
 pause
 goto flash
@@ -40,7 +40,7 @@ goto flash
 cls
 echo.
 echo.
-echo 🚀 Запуск прошивки
+echo Firmware launch
 echo.
 echo.
 cd /d "%~dp0d"
@@ -52,7 +52,7 @@ if exist flash.exe (
 ) else if exist flash.ps1 (
     powershell.exe -ExecutionPolicy Bypass -NoProfile -File "flash.ps1"
 ) else (
-    echo ❌ Скрипт прошивки не найден!
+    echo Firmware script not found!
 )
 
 echo.
